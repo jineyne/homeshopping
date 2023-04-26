@@ -1,0 +1,19 @@
+아이템:
+    url:    GET http://localhost:5000/item/ft/date/time/asc
+    param:  필터링, split tkn = :
+            기본: all
+            쇼핑몰 필터링: m:<얻을 쇼핑몰 이름(cjmall)>
+            카테고리 필터링: ct:<얻을 카테고리 이름(유아·아동)>
+            예:  cjmall, 모든 카테고리: m:cjmall
+                 cjmall, 유아·아동: m:cjmall:ct:유아·아동
+    return: application/json
+
+카테고리:
+    url:    GET http://localhost:5000/cate
+    param:  없음
+    return: application/json
+
+쇼핑몰:
+    url:    GET http://localhost:5000/mall
+    param:  없음
+    return: application/json

@@ -1,0 +1,10 @@
+{% load index_tags %}
+
+<div class="time-stemp">
+    <div class="center">
+        <div class="time">
+            {% get_hour card.start_time as hour %}
+            {{ hour }}시
+        </div>
+    </div>
+</div>

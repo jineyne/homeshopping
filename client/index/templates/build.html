@@ -1,0 +1,16 @@
+{% load index_tags %}
+
+{% with current_time=0 current_date=0 %}
+    {% for card in items %}
+        {% if card.date != current_date %}
+            {% update_variable card.date as current_date %}
+            {% include "_date_stemp.html" %}
+        {% endif %}
+        {% get_hour card.start_time as time %}
+        {% if current_time != time %}
+            {% update_variable time as current_time %}
+            {% include "_time_stemp.html" %}
+        {% endif %}
+        {% include  "_card.html" %}
+    {% endfor %}
+{% endwith %}

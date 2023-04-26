@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}?v{% now 'u'  %}" />
+        <title>[박철진] 개발자_사전과제</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <div class="margin-auto">
+                {% block header %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="margin-auto container">
+            {% block container %}
+            {% endblock %}
+        </div>
+
+        <div class="page-footer">
+            <div class="margin-auto">
+                {% block footer %}
+                {% endblock %}
+            </div>
+        </div>
+
+
+        <div id="scripts">
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+            <script src="{% static 'js/lib.js' %}?v{% now 'u'  %}"></script>
+            <script src="{% static 'js/the.js' %}?v{% now 'u'  %}"></script>
+            {% block scripts %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,2 @@
+API 프레임워크: flask + sqlalchemy + migrate
+ 웹 프레임워크: django + jquery

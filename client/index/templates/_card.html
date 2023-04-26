@@ -1,0 +1,34 @@
+{% load index_tags %}
+
+<a class="card" href="{{ card.url }}">
+    <div class="item">
+        <div class="item-img">
+            <img src="" data-original="{{ card.img }}" />
+        </div>
+        <div class="item-info">
+            <div>
+                <span class="mall">{{ card.mall.label }}</span>
+                {% is_online card.date card.start_time card.end_time as online %}
+                {% if online %}
+                <span class="online">생방송 중!</span>
+                {% endif %}
+                <span class="time">{{ card.start_time }} ~ {{ card.end_time }}</span>
+            </div>
+            <div class="name">{{ card.name }}</div>
+            {% convert_to_money card.org_price as org_price %}
+            <div class="org-price">{{ org_price }}원</div>
+            {% convert_to_money card.price as price %}
+            <div class="price">{{ price }}원</div>
+            {% if card.sub_item|length != 0 %}
+            <div class="sub-item-count">같은 시간대 판매상품 {{ card.sub_item|length }}개</div>
+            {% endif %}
+        </div>
+    </div>
+    {% if card.sub_item %}
+    <div class="sub-items">
+        {% for sub_card in card.sub_item %}
+        {% include "_sub_card.html" %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</a>

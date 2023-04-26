@@ -1,0 +1,12 @@
+{% load index_tags %}
+
+{% get_year card.date as year %}
+{% get_month card.date as month %}
+{% get_day card.date as day %}
+{% get_weekday card.date as week %}
+<div class="date-stemp" id="date-stemp-{{card.date}}">
+    <div class="center">
+        <div class="date">{{ year }}년 {{ month }}월 {{ day }}일</div>
+        <div class="week">{{ week }}</div>
+    </div>
+</div>

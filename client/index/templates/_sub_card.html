@@ -1,0 +1,14 @@
+{% load index_tags %}
+
+<div class="sub-item">
+    <div class="sub-item-img">
+        <img src="" data-original="{{ card.img }}" />
+    </div>
+    <div class="sub-item-info">
+        <div class="name">{{ card.name }}</div>
+        {% convert_to_money card.org_price as org_price %}
+        <div class="org-price">{{ org_price }}원</div>
+        {% convert_to_money card.price as price %}
+        <div class="price">{{ price }}원</div>
+    </div>
+</div>

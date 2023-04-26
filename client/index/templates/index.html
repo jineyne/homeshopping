@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load index_tags %}
+
+{% block header %}
+<div class="table-cell">
+    <label for="mall">쇼핑몰</label>
+    <select id="select-mall" class="control" name="mall">
+        <option value="">전부</option>
+    </select>
+</div>
+<div class="table-cell" style="padding-left: 20px">
+    <label for="category">카테고리</label>
+    <select id="select-category" class="control" name="category">
+        <option value="">전부</option>
+    </select>
+</div>
+{% endblock %}
+
+{% block container %}
+    <div class="table-cell" id="loop"></div>
+{% endblock %}
+
+{% block footer %}
+    <div class="date-selector">
+        {% for i in "xxxxxxxxxx" %}
+        <button type="button" class="date"
+                data-date="201711{{ forloop.counter|add:"20" }}">
+            {{ forloop.counter|add:"20" }}일
+        </button>
+        {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var csrf_token = "{{ csrf_token }}"
+</script>
+{% endblock %}
